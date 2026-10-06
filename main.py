@@ -10,6 +10,10 @@ model = SentenceTransformer(
     device="cpu"
 )
 
+@app.get("/")
+def root():
+    return {"message": "Embedding Service is running"}
+
 class EmbedRequest(BaseModel):
     texts: list[str]
 
